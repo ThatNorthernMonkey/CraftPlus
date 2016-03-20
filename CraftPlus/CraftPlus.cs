@@ -62,56 +62,62 @@ namespace CraftPlus
         [Subscribe]
         public void AfterConsumingIngredient(OnConsumeCraftingIngredientEvent @e)
         {
-            FindIngredientsInInventoryTracker(@e.Recipe.RecipeList);
-            UpdateItemsInInventoriesAfterCrafting(@e.Recipe.RecipeList);
-            Update();
+            if(!@e.Recipe.IsCookingRecipe)
+            {
+                FindIngredientsInInventoryTracker(@e.Recipe.RecipeList);
+                UpdateItemsInInventoriesAfterCrafting(@e.Recipe.RecipeList);
+                Update();
 
-            @e.ReturnEarly = true;
+                @e.ReturnEarly = true;
+            }
         }
 
         [Subscribe]
         public void DoWeHaveTheIngredients(PreCraftingRecipeHaveIngredientCheckEvent @e)
         {
-            // We need to cache the results, or the Draw() method checks 30+ times a second. Rip CPU.
-            if (CachedIngredients.ContainsKey(@e.Recipe.Name))
-            {
-                @e.ReturnValue = CachedIngredients[@e.Recipe.Name];
-                @e.ReturnEarly = true;
-            }
-            else
-            {
-                if (CheckInventoriesForIngredients(@e.Recipe.RecipeList))
-                {
-                    if (CachedIngredients.ContainsKey(@e.Recipe.Name))
-                    {
-                        CachedIngredients.Remove(@e.Recipe.Name);
-                        CachedIngredients.Add(@e.Recipe.Name, true);
-                    }
-                    else
-                    {
-                        CachedIngredients.Add(@e.Recipe.Name, true);
-                    }
 
-                    @e.ReturnValue = true;
+            if(!@e.Recipe.IsCookingRecipe)
+            {
+                if (CachedIngredients.ContainsKey(@e.Recipe.Name))
+                {
+                    @e.ReturnValue = CachedIngredients[@e.Recipe.Name];
                     @e.ReturnEarly = true;
                 }
                 else
                 {
-                    if (CachedIngredients.ContainsKey(@e.Recipe.Name))
+                    if (CheckInventoriesForIngredients(@e.Recipe.RecipeList))
                     {
-                        CachedIngredients.Remove(@e.Recipe.Name);
-                        CachedIngredients.Add(@e.Recipe.Name, false);
+                        if (CachedIngredients.ContainsKey(@e.Recipe.Name))
+                        {
+                            CachedIngredients.Remove(@e.Recipe.Name);
+                            CachedIngredients.Add(@e.Recipe.Name, true);
+                        }
+                        else
+                        {
+                            CachedIngredients.Add(@e.Recipe.Name, true);
+                        }
+
+                        @e.ReturnValue = true;
+                        @e.ReturnEarly = true;
                     }
                     else
                     {
-                        CachedIngredients.Add(@e.Recipe.Name, false);
-                    }
+                        if (CachedIngredients.ContainsKey(@e.Recipe.Name))
+                        {
+                            CachedIngredients.Remove(@e.Recipe.Name);
+                            CachedIngredients.Add(@e.Recipe.Name, false);
+                        }
+                        else
+                        {
+                            CachedIngredients.Add(@e.Recipe.Name, false);
+                        }
 
-                    @e.ReturnValue = false;
-                    @e.ReturnEarly = true;
+                        @e.ReturnValue = false;
+                        @e.ReturnEarly = true;
+                    }
                 }
             }
-
+            // We need to cache the results, or the Draw() method checks 30+ times a second. Rip CPU.
         }
 
         [Subscribe]
