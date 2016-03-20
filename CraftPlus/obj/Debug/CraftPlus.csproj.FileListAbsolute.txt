@@ -1,0 +1,16 @@
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\obj\Debug\CraftPlus.csprojResolveAssemblyReference.cache
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\CraftPlus.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\CraftPlus.pdb
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Microsoft.Xna.Framework.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\StormLoader.exe
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Mono.Cecil.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Newtonsoft.Json.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Castle.Core.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Microsoft.Xna.Framework.Game.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\StormLoader.pdb
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Newtonsoft.Json.xml
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\bin\Debug\Castle.Core.xml
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\obj\Debug\CraftPlus.dll
+c:\users\kiada\documents\visual studio 2015\Projects\CraftPlus\CraftPlus\obj\Debug\CraftPlus.pdb
